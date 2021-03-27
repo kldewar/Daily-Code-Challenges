@@ -22,8 +22,9 @@ fn main() {
             number_in += 1;
         }
         total_number += 1;
-
-        pi_estimate = 4.0*(number_in as f32 /total_number as f32);
+        
+        let ratio: f32 = number_in as f32 /total_number as f32;
+        pi_estimate = 4.0*ratio;
         println!("Estimate is: {}", pi_estimate);
     }
 
