@@ -27,7 +27,7 @@ fn first_missing_positive(mut numbers: Vec<i32> ) -> i32 {
 
     for index in 0..numbers.len() {
         let value = i32::abs(numbers[index]) as usize;
-            if value < numbers.len() {
+            if value < numbers.len() + 1 {
                 numbers[value-1] = -i32::abs(numbers[value-1]);
             }
     }
@@ -58,6 +58,7 @@ mod test {
     #[test]
     fn basic() {
         assert_eq!(first_missing_positive(vec![]), 1);
+        assert_eq!(first_missing_positive(vec![0]), 1);
         assert_eq!(first_missing_positive(vec![1,2,3]), 4);
         assert_eq!(first_missing_positive(vec![3,4,-1,1]), 2);
         assert_eq!(first_missing_positive(vec![7,9,11]), 1);
