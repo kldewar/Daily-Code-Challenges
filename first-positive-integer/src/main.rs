@@ -50,3 +50,18 @@ fn main() {
     let my_vector = vec!(1, 4, 2, 6, 4, -7, 3, 8);
     println!("The first missing positive integer in the vector is {}.", first_missing_positive(my_vector));
 }
+
+#[cfg(test)]
+mod test {
+    use crate::*;
+
+    #[test]
+    fn basic() {
+        assert_eq!(first_missing_positive(vec![]), 1);
+        assert_eq!(first_missing_positive(vec![1,2,3]), 4);
+        assert_eq!(first_missing_positive(vec![3,4,-1,1]), 2);
+        assert_eq!(first_missing_positive(vec![7,9,11]), 1);
+        assert_eq!(first_missing_positive(vec![-1, -2, -3]), 1);
+
+    }
+}
