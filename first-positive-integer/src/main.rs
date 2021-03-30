@@ -37,7 +37,7 @@ fn first_missing_positive(mut numbers: Vec<i32> ) -> i32 {
     */
 
     for (count, value) in numbers.iter().enumerate() {
-        if value > &0 {
+        if *value > 0 {
             return (count + 1) as i32;
         }
     }
